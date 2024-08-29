@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS prodi (
 # Menutup koneksi sementara
 conn.commit()
 
+
 # Membuat jendela utama
 jendela = tk.Tk()
 jendela.title("Aplikasi Prodi Pilihan")
@@ -35,7 +36,7 @@ def prediksi():
     if geografi.get() < 75.0 or inggris.get() < 75.0 or matematika.get() < 75.0:
         a = 'Tidak Lulus Seleksi'
     else:
-        if matematika.get() > 99 and inggris.get() > 99:
+        if matematika.get() > 99 or inggris.get() > 99:
             a = 'Kedokteran'
         elif geografi.get() > 90 and matematika.get() > 88:
             a = 'Teknik'
